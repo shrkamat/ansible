@@ -6,6 +6,7 @@
     with_items:
     - htop
     - tmux
+
   - name: clone nvim
     git: repo=https://github.com/neovim/neovim.git
     version: v0.8.0
