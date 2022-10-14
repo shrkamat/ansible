@@ -4,5 +4,5 @@
   - name: Install generic packages
     apt: name={{items}}
     with_items:
-      - htop
-      - tmux
+    - htop
+    - tmux
