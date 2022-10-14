@@ -6,7 +6,7 @@
     with_items:
     - htop
     - tmux
-    - ninja
+    - ninja-build
   - name: Clone nvim
     git:
       repo: https://github.com/neovim/neovim.git
