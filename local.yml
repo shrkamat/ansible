@@ -1,13 +1,23 @@
 - hosts: localhost
-  become: true
   tasks:
   - name: Install generic packages
+    become: true
     apt: name={{item}}
     with_items:
     - htop
     - tmux
-  - name: clone nvim
+    - ninja
+  - name: Clone nvim
     git:
       repo: https://github.com/neovim/neovim.git
       version: v0.8.0
       dest: /home/skamath/nvim
+  - name: Configuring nvim
+    command: "make -DCMAKE_BUILD_TYPE=Release"
+    args:
+      chdir: /home/skamath/nvim
+  - name: Install nvim
+    become: true
+    command: "make -DCMAKE_BUILD_TYPE=Release install"
+    args:
+      chdir: /home/skamath/nvim
