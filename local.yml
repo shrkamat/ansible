@@ -13,11 +13,11 @@
       version: v0.8.0
       dest: /home/skamath/nvim
   - name: Configuring nvim
-    command: "make -DCMAKE_BUILD_TYPE=Release"
+    command: "make CMAKE_BUILD_TYPE=Release"
     args:
       chdir: /home/skamath/nvim
   - name: Install nvim
     become: true
-    command: "make -DCMAKE_BUILD_TYPE=Release install"
+    command: "make CMAKE_BUILD_TYPE=Release install"
     args:
       chdir: /home/skamath/nvim
